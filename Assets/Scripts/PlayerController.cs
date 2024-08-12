@@ -8,10 +8,18 @@ public class PlayerController : MonoBehaviour
     public BoxCollider2D boxCol;
 
     public float speed;
+    public float jump;
+
+    private Rigidbody2D rb2d;
 
     //Collider Variables
     private Vector2 boxColInitSize;
     private Vector2 boxColInitOffset;
+
+    private void Awake()
+    {
+        rb2d = gameObject.GetComponent<Rigidbody2D>();
+    }
 
     private void Start()
     {
@@ -24,36 +32,28 @@ public class PlayerController : MonoBehaviour
     {
         //Change Movement Direction logic
         float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Jump");
 
-        MoveCharacter(horizontal);
-        PlayeMovementAnimation(horizontal);
-
-        //Crouch logic
-        if (Input.GetKey(KeyCode.LeftControl))
-        {
-            Crouch(true);
-        }
-        else
-        {
-            Crouch(false);
-        }
-
-       
+        MoveCharacter(horizontal, vertical);
+        PlayMovementAnimation(horizontal, vertical);  
 
     }
 
-    private void MoveCharacter(float horizontal)
+    private void MoveCharacter(float horizontal, float vertical)
     {
         Vector3 position = transform.position;
-
         position.x = position.x + horizontal * speed * Time.deltaTime;
-
         transform.position = position;
+
+        if(vertical>0)
+        {
+            rb2d.AddForce(new Vector2(0f, jump), ForceMode2D.Force);
+        }
     }
 
-    private void PlayeMovementAnimation(float horizontal)
+    private void PlayMovementAnimation(float horizontal, float vertical)
     {
-        animator.SetFloat("Speed", Mathf.Abs(0.3f));
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
         Vector3 scale = transform.localScale;
         if (horizontal < 0)
@@ -78,10 +78,19 @@ public class PlayerController : MonoBehaviour
            transform.rotation = Quaternion.Euler(transform.rotation.x, 0f, transform.rotation.y);
        }*/
 
-        //Jump logic
-        float VerticalInput = Input.GetAxisRaw("Jump");
-        
-        PlayJumpAnimation(VerticalInput);    
+        //Crouch logic
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            Crouch(true);
+            animator.Play("Player_Crouch");
+        }
+        else
+        {
+            Crouch(false);
+        }
+
+        //Jump logic              
+        PlayJumpAnimation(vertical);    
        
     }
 
@@ -94,7 +103,7 @@ public class PlayerController : MonoBehaviour
         
         else
         {
-            //animator.SetBool("Jump", false);
+            animator.SetBool("Jump", false);
         }
         
     }
