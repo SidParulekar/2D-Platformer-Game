@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     public Animator animator;
     public BoxCollider2D boxCol;
+
+    public ScoreController score_controller;
 
     public float speed;
     public float jump;
@@ -131,7 +134,11 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("Crouch", crouch);
     }
 
-    
+    public void PickUpKey()
+    {
+        score_controller.IncreaseScore(10);
+        Debug.Log("Key has been picked up!");
+    }
 }
 
 
