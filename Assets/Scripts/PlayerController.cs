@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -138,6 +139,13 @@ public class PlayerController : MonoBehaviour
     {
         score_controller.IncreaseScore(10);
         Debug.Log("Key has been picked up!");
+    }
+
+    public void KillPlayer()
+    {
+        Debug.Log("Player killed by Enemy!");
+        animator.Play("Player_Death");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
 
