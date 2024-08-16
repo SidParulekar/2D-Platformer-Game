@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     public ScoreController score_controller;
 
+    public LivesController lives_controller;
+
     public float speed;
     public float jump;
 
@@ -144,8 +146,14 @@ public class PlayerController : MonoBehaviour
     public void KillPlayer()
     {
         Debug.Log("Player killed by Enemy!");
+        lives_controller.DecreaseLives(1);
         animator.Play("Player_Death");
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        animator.SetInteger("Lives", lives_controller.getlives());
+        
+        if(lives_controller.getlives()==0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }   
     }
 }
 

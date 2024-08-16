@@ -8,7 +8,7 @@ public class ScoreController : MonoBehaviour
 {
    private TextMeshProUGUI score_text;
 
-    private int score = 0;
+   private int score = 0;
 
     private void Awake()
     {
