@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public BoxCollider2D boxCol;
 
     public ScoreController score_controller;
+
+    public LivesController lives_controller;
 
     public float speed;
     public float jump;
@@ -138,6 +141,19 @@ public class PlayerController : MonoBehaviour
     {
         score_controller.IncreaseScore(10);
         Debug.Log("Key has been picked up!");
+    }
+
+    public void KillPlayer()
+    {
+        Debug.Log("Player killed by Enemy!");
+        lives_controller.DecreaseLives(1);
+        animator.Play("Player_Death");
+        animator.SetInteger("Lives", lives_controller.getlives());
+        
+        if(lives_controller.getlives()==0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }   
     }
 }
 
