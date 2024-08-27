@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
         //Fetching initial collider properties
         boxColInitSize = boxCol.size;
         boxColInitOffset = boxCol.offset;
+        Physics2D.IgnoreLayerCollision(6, 3, false);
     }
 
     private void Update()

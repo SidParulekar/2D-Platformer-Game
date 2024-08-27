@@ -7,6 +7,6 @@ public class QuitGameController : MonoBehaviour
 {
     public void QuitGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(0);
     }
 }
