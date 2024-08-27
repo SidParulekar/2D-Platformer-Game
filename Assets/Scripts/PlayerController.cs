@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     public LivesController lives_controller;
 
+    public GameObject gameOverUI;
+
     public float speed;
     public float jump;
 
@@ -41,8 +43,8 @@ public class PlayerController : MonoBehaviour
         float vertical = Input.GetAxisRaw("Jump");
 
         MoveCharacter(horizontal, vertical);
-        PlayMovementAnimation(horizontal, vertical);  
-
+        PlayMovementAnimation(horizontal, vertical);
+        
     }
 
     private void MoveCharacter(float horizontal, float vertical)
@@ -152,7 +154,10 @@ public class PlayerController : MonoBehaviour
         
         if(lives_controller.getlives()==0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            gameOverUI.SetActive(true);
+            Physics2D.IgnoreLayerCollision(6, 3, true);
+            this.enabled = false;
         }   
     }
 }

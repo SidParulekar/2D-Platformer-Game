@@ -6,6 +6,10 @@ public class Enemy_3_Movement : MonoBehaviour
 {
     private float speed = 0.5f;
     private float horizontal = 1f;
+
+    public float start_pos;
+    public float end_pos;
+
     private void Update()
     {
         MoveEnemy();
