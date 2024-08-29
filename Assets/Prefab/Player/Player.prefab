@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 1646182262}
   - component: {fileID: 1646182266}
   - component: {fileID: 1646182267}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,5 +256,7 @@ MonoBehaviour:
   animator: {fileID: 3829224862923559448}
   boxCol: {fileID: 1646182266}
   score_controller: {fileID: 0}
+  lives_controller: {fileID: 0}
+  gameOverUI: {fileID: 0}
   speed: 4
   jump: 100
