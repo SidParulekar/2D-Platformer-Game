@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 public class PlayerController : MonoBehaviour
 {
@@ -47,6 +48,25 @@ public class PlayerController : MonoBehaviour
         PlayMovementAnimation(horizontal, vertical);
         
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        if (collision.gameObject.GetComponent<TilemapCollider2D>())
+        {
+            animator.SetBool("OnGround", true);
+            if(Mathf.Abs(horizontal)>0.25)
+            {
+                animator.Play("Player_Run");
+            }    
+        }
+
+        else
+        {
+            animator.SetBool("OnGround", false);
+        }
+    }
+
 
     private void MoveCharacter(float horizontal, float vertical)
     {

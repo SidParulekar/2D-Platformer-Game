@@ -91,8 +91,10 @@ public enum Sounds
     ButtonClick,
     PlayerMove,
     PlayerDeath,
+    PlayerTeleport,
     EnemyDeath,
     Music, 
     Pickup,
+    Teleporter,
     GameOver
 }
