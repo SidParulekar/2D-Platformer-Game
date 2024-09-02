@@ -142,12 +142,14 @@ public class PlayerController : MonoBehaviour
 
     public void PickUpKey()
     {
+        SoundManager.Instance.Play(Sounds.Pickup);
         score_controller.IncreaseScore(10);
         Debug.Log("Key has been picked up!");
     }
 
     public void KillPlayer()
     {
+        SoundManager.Instance.Play(Sounds.PlayerDeath);
         Debug.Log("Player killed by Enemy!");
         lives_controller.DecreaseLives(1);
         animator.Play("Player_Death");
@@ -156,6 +158,7 @@ public class PlayerController : MonoBehaviour
         if(lives_controller.getlives()==0)
         {
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SoundManager.Instance.Play(Sounds.GameOver);
             gameOverUI.SetActive(true);
             Physics2D.IgnoreLayerCollision(6, 3, true);
             this.enabled = false;

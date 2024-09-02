@@ -7,6 +7,7 @@ public class QuitGameController : MonoBehaviour
 {
     public void QuitGame()
     {
+        SoundManager.Instance.Play(Sounds.ButtonClick);
         SceneManager.LoadScene(0);
     }
 }
