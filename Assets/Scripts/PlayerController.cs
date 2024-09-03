@@ -14,10 +14,14 @@ public class PlayerController : MonoBehaviour
 
     public LivesController lives_controller;
 
+    private MovingPlatform moving_platform_controller;
+
     public GameObject gameOverUI;
 
     public float speed;
     public float jump;
+
+    private bool on_moving_platform;
 
     private Rigidbody2D rb2d;
 
@@ -44,6 +48,11 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Jump");
 
+        if (on_moving_platform)
+        {
+            MoveCharacterPlatform();
+        }
+
         MoveCharacter(horizontal, vertical);
         PlayMovementAnimation(horizontal, vertical);
         
@@ -61,9 +70,23 @@ public class PlayerController : MonoBehaviour
             }    
         }
 
-        else
+        else if(collision.gameObject.GetComponent<MovingPlatform>())
         {
-            animator.SetBool("OnGround", false);
+            moving_platform_controller = collision.gameObject.GetComponent<MovingPlatform>(); 
+            on_moving_platform = true;
+        }
+
+    }
+
+    private void MoveCharacterPlatform()
+    {
+        Vector3 position = transform.position;
+        position.x = position.x + 0.5f * Time.deltaTime;
+        transform.position = position;
+
+        if(position.x >= moving_platform_controller.end_pos)
+        {
+            on_moving_platform = false;
         }
     }
 
