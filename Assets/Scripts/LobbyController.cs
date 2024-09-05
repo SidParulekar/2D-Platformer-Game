@@ -12,7 +12,8 @@ public class LobbyController : MonoBehaviour
     public GameObject levelSelectPopup;
     public void PlayGame()
     {
-       levelSelectPopup.SetActive(true);
+        SoundManager.Instance.Play(Sounds.ButtonClick);
+        levelSelectPopup.SetActive(true);
     }
 
     public void LoadLevel1()
@@ -32,6 +33,7 @@ public class LobbyController : MonoBehaviour
 
     private void onClick(int level)
     {
+        SoundManager.Instance.Play(Sounds.ButtonClick);
         string selected_level = EventSystem.current.currentSelectedGameObject.tag;
         LevelStatus levelStatus = LevelManager.Instance.GetLevelStatus(selected_level);
 
