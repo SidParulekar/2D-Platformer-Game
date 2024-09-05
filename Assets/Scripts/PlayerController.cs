@@ -76,7 +76,13 @@ public class PlayerController : MonoBehaviour
             on_moving_platform = true;
         }
 
+        else if(collision.gameObject.GetComponent<GameEndController>())
+        {
+            this.enabled = false;
+        }
+
     }
+
 
     public float getPlayerPosition()
     {

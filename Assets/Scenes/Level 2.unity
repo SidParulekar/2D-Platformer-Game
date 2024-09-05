@@ -544,6 +544,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 445416548}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &445416550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6895725715894420019, guid: 09cd685ba4ddcb8468f81afa501eef08,
+    type: 3}
+  m_PrefabInstance: {fileID: 445416548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &759981563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,7 +1041,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 8
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1405,7 +1411,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 7
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1455,7 +1461,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 2
-      m_TileSpriteIndex: 3
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1510,8 +1516,8 @@ Tilemap:
     m_Data: {fileID: 21300096, guid: 05f0bf62dcfb65a4ebd0402151fc3c11, type: 3}
   - m_RefCount: 11
     m_Data: {fileID: 21300102, guid: 05f0bf62dcfb65a4ebd0402151fc3c11, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300128, guid: 05f0bf62dcfb65a4ebd0402151fc3c11, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 4
     m_Data: {fileID: 21300040, guid: 05f0bf62dcfb65a4ebd0402151fc3c11, type: 3}
   - m_RefCount: 2
@@ -1519,11 +1525,11 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300130, guid: 05f0bf62dcfb65a4ebd0402151fc3c11, type: 3}
   - m_RefCount: 1
+    m_Data: {fileID: 21300128, guid: 05f0bf62dcfb65a4ebd0402151fc3c11, type: 3}
+  - m_RefCount: 1
     m_Data: {fileID: 21300124, guid: 05f0bf62dcfb65a4ebd0402151fc3c11, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300018, guid: 05f0bf62dcfb65a4ebd0402151fc3c11, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 50
     m_Data:
@@ -2469,7 +2475,7 @@ PrefabInstance:
     - target: {fileID: 1646182267, guid: 2f4c28fd917c51944a1f3782680a14da, type: 3}
       propertyPath: gameOverUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 445416550}
     - target: {fileID: 1646182267, guid: 2f4c28fd917c51944a1f3782680a14da, type: 3}
       propertyPath: lives_controller
       value: 
