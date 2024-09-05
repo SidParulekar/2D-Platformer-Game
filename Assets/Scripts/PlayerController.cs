@@ -78,6 +78,12 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public float getPlayerPosition()
+    {
+        Vector3 position = transform.position;
+        return position.x;
+    }
+
     private void MoveCharacterPlatform()
     {
         Vector3 position = transform.position;

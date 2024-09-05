@@ -96,5 +96,6 @@ public enum Sounds
     Music, 
     Pickup,
     Teleporter,
-    GameOver
+    GameOver,
+    EnemyAttack
 }

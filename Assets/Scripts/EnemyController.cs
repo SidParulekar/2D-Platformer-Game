@@ -2,9 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class EnemyController : MonoBehaviour
 {
+
+    public Animator animator;
+
     private float speed = 0.5f;
     private float horizontal = 1f;
 
@@ -52,9 +56,26 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Vector3 position = transform.position;
         if (collision.gameObject.GetComponent<PlayerController>())
         {
             PlayerController player_controller = collision.gameObject.GetComponent<PlayerController>();
+            if (horizontal>0 && player_controller.getPlayerPosition()<position.x || 
+                horizontal<0 && player_controller.getPlayerPosition()>position.x)
+            {
+                
+                if(horizontal>0)
+                {
+                    horizontal = -1f;
+                }
+
+                else if(horizontal<0)
+                {
+                    horizontal = 1f;
+                }
+            }
+            SoundManager.Instance.Play(Sounds.EnemyAttack);
+            animator.Play("Enemy_Attack");
             player_controller.KillPlayer();           
         }
     }

@@ -2153,10 +2153,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1646182267, guid: 2f4c28fd917c51944a1f3782680a14da, type: 3}
-      propertyPath: jump
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 1646182267, guid: 2f4c28fd917c51944a1f3782680a14da, type: 3}
       propertyPath: gameOverUI
       value: 
       objectReference: {fileID: 1908974968}
@@ -2366,16 +2362,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3083869970106651477, guid: a2b2b41330de15747b90689e92685964,
-        type: 3}
-      propertyPath: end_pos
-      value: 7.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 3083869970106651477, guid: a2b2b41330de15747b90689e92685964,
-        type: 3}
-      propertyPath: start_pos
-      value: 3.54
       objectReference: {fileID: 0}
     - target: {fileID: 8763633752907773975, guid: a2b2b41330de15747b90689e92685964,
         type: 3}
