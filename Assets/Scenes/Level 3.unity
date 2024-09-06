@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 4837988}
   - component: {fileID: 4837987}
   - component: {fileID: 4837986}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ChargeEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
