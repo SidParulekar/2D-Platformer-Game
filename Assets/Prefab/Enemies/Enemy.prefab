@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 985892033875377601}
-  start_pos: 3.54
-  end_pos: 7.22
+  startPos: 10.4
+  endPos: 13.3
 --- !u!95 &985892033875377601
 Animator:
   serializedVersion: 5

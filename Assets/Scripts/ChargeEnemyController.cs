@@ -9,8 +9,8 @@ public class ChargeEnemyController : MonoBehaviour
     private float speed = 2.5f;
     private float horizontal = -1f;
 
-    public float start_pos;
-    public float end_pos;
+    [SerializeField] private float startPos;
+    [SerializeField] private float endPos;
 
     private void Start()
     {
@@ -42,12 +42,12 @@ public class ChargeEnemyController : MonoBehaviour
     private void MoveEnemy()
     {
         Vector3 position = transform.position;
-        if (position.x <= end_pos)
+        if (position.x <= endPos)
         {
             horizontal = 1f;
         }
 
-        else if (position.x >= start_pos)
+        else if (position.x >= startPos)
         {
             horizontal = -1f;
         }

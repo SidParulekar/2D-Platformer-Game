@@ -10,8 +10,8 @@ public class SoundManager : MonoBehaviour
 
     public static SoundManager Instance { get { return instance; } }
 
-    public AudioSource sound_effect;
-    public AudioSource sound_music;
+    public AudioSource soundEffect;
+    public AudioSource soundMusic;
 
     public SoundType[] sounds;
 
@@ -41,7 +41,7 @@ public class SoundManager : MonoBehaviour
 
         if(clip!=null)
         {
-            sound_effect.PlayOneShot(clip); 
+            soundEffect.PlayOneShot(clip); 
         }
 
         else
@@ -56,8 +56,8 @@ public class SoundManager : MonoBehaviour
 
         if (clip != null)
         {
-            sound_music.clip = clip;
-            sound_music.Play();
+            soundMusic.clip = clip;
+            soundMusic.Play();
         }
 
         else
@@ -68,11 +68,11 @@ public class SoundManager : MonoBehaviour
 
     private AudioClip getSoundClip(Sounds sound)
     {
-        SoundType audio =  Array.Find(sounds, item => item.sound_type == sound);
+        SoundType audio =  Array.Find(sounds, item => item.soundType == sound);
 
         if(audio!= null)
         {
-            return audio.sound_clip;
+            return audio.soundClip;
         }
 
         return null;
@@ -82,8 +82,8 @@ public class SoundManager : MonoBehaviour
 [Serializable]
 public class SoundType
 {
-    public Sounds sound_type;
-    public AudioClip sound_clip;
+    public Sounds soundType;
+    public AudioClip soundClip;
 }
 
 public enum Sounds
