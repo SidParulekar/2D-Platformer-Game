@@ -12,8 +12,8 @@ public class EnemyController : MonoBehaviour
     private float speed = 0.5f;
     private float horizontal = 1f;
 
-    public float start_pos;
-    public float end_pos;
+    [SerializeField] private float startPos;
+    [SerializeField] private float endPos;
 
     private void Update()
     {
@@ -40,12 +40,12 @@ public class EnemyController : MonoBehaviour
     private void MoveEnemy()
     {
         Vector3 position = transform.position;
-        if (position.x <= start_pos)
+        if (position.x <= startPos)
         {
             horizontal = 1f;
         }
 
-        else if (position.x >= end_pos)
+        else if (position.x >= endPos)
         {
             horizontal = -1f;
         }

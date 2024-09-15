@@ -2235,27 +2235,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3085d1843b7988549bcf6b8ed106b941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound_effect: {fileID: 844187478}
-  sound_music: {fileID: 187565230}
+  soundEffect: {fileID: 844187478}
+  soundMusic: {fileID: 187565230}
   sounds:
-  - sound_type: 0
-    sound_clip: {fileID: 8300000, guid: a4dc23583fb1dc84a89049f88b06efe8, type: 3}
-  - sound_type: 5
-    sound_clip: {fileID: 8300000, guid: 0651b56880a11ef45909b779443691aa, type: 3}
-  - sound_type: 2
-    sound_clip: {fileID: 8300000, guid: 55cf2d6b154ee6d4e87f7f87ac724172, type: 3}
-  - sound_type: 6
-    sound_clip: {fileID: 8300000, guid: d76c71e98617e1c41a5cdc490eb1bee1, type: 3}
-  - sound_type: 8
-    sound_clip: {fileID: 8300000, guid: 31b2284e8ab3f244182080ca7da474b7, type: 3}
-  - sound_type: 7
-    sound_clip: {fileID: 8300000, guid: eb9913efb3825f3488667a73f532fd30, type: 3}
-  - sound_type: 3
-    sound_clip: {fileID: 8300000, guid: 0cce91cb3c5bf814e805233571eab8ea, type: 3}
-  - sound_type: 1
-    sound_clip: {fileID: 8300000, guid: 88cf4c38c64a7b84f88a54036e698825, type: 3}
-  - sound_type: 9
-    sound_clip: {fileID: 8300000, guid: b843fce942ecaf5408ed50f4d6129f2a, type: 3}
+  - soundType: 0
+    soundClip: {fileID: 8300000, guid: a4dc23583fb1dc84a89049f88b06efe8, type: 3}
+  - soundType: 2
+    soundClip: {fileID: 8300000, guid: 55cf2d6b154ee6d4e87f7f87ac724172, type: 3}
+  - soundType: 3
+    soundClip: {fileID: 8300000, guid: 0cce91cb3c5bf814e805233571eab8ea, type: 3}
+  - soundType: 5
+    soundClip: {fileID: 8300000, guid: 0651b56880a11ef45909b779443691aa, type: 3}
+  - soundType: 8
+    soundClip: {fileID: 8300000, guid: 31b2284e8ab3f244182080ca7da474b7, type: 3}
+  - soundType: 9
+    soundClip: {fileID: 8300000, guid: b843fce942ecaf5408ed50f4d6129f2a, type: 3}
+  - soundType: 6
+    soundClip: {fileID: 8300000, guid: d76c71e98617e1c41a5cdc490eb1bee1, type: 3}
+  - soundType: 0
+    soundClip: {fileID: 0}
+  - soundType: 0
+    soundClip: {fileID: 0}
 --- !u!4 &1609449658
 Transform:
   m_ObjectHideFlags: 0

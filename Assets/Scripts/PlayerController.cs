@@ -10,9 +10,9 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public BoxCollider2D boxCol;
 
-    public ScoreController score_controller;
+    public ScoreController scoreController;
 
-    public LivesController lives_controller;
+    public LivesController livesController;
 
     private MovingPlatform moving_platform_controller;
 
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
         position.x = position.x + 0.5f * Time.deltaTime;
         transform.position = position;
 
-        if(position.x >= moving_platform_controller.end_pos)
+        if(position.x >= moving_platform_controller.getEndPos())
         {
             on_moving_platform = false;
         }
@@ -198,7 +198,7 @@ public class PlayerController : MonoBehaviour
     public void PickUpKey()
     {
         SoundManager.Instance.Play(Sounds.Pickup);
-        score_controller.IncreaseScore(10);
+        scoreController.IncreaseScore(10);
         Debug.Log("Key has been picked up!");
     }
 
@@ -206,11 +206,11 @@ public class PlayerController : MonoBehaviour
     {
         SoundManager.Instance.Play(Sounds.PlayerDeath);
         Debug.Log("Player killed by Enemy!");
-        lives_controller.DecreaseLives(1);
+        livesController.DecreaseLives(1);
         animator.Play("Player_Death");
-        animator.SetInteger("Lives", lives_controller.getlives());
+        animator.SetInteger("Lives", livesController.getlives());
         
-        if(lives_controller.getlives()==0)
+        if(livesController.getlives()==0)
         {
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             SoundManager.Instance.Play(Sounds.GameOver);

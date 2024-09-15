@@ -246,8 +246,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3829224862923559448}
   boxCol: {fileID: 1646182266}
-  score_controller: {fileID: 0}
-  lives_controller: {fileID: 0}
+  scoreController: {fileID: 0}
+  livesController: {fileID: 0}
   gameOverUI: {fileID: 0}
   speed: 4
   jump: 150
