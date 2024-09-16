@@ -79,7 +79,7 @@ public class SoundManager : MonoBehaviour
     }
 }
 
-[Serializable]
+/*[Serializable]
 public class SoundType
 {
     public Sounds soundType;
@@ -98,4 +98,4 @@ public enum Sounds
     Teleporter,
     GameOver,
     EnemyAttack
-}
+}*/

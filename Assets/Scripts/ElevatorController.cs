@@ -11,19 +11,19 @@ public class ElevatorController : MonoBehaviour
 
     [SerializeField] private float endPos;
 
-    private bool elevator_active;
+    private bool elevatorActive;
 
-    private float initial_position;
+    private float initialPosition;
 
     private void Start()
     {
         Vector3 position = transform.position;
-        initial_position = position.y;
+        initialPosition = position.y;
     }
 
     private void Update()
     {
-        if(elevator_active)
+        if(elevatorActive)
         {
             Move();
         }
@@ -34,7 +34,7 @@ public class ElevatorController : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerController>())
         {
-            elevator_active = true; 
+            elevatorActive = true; 
         }
     }
 
@@ -43,11 +43,11 @@ public class ElevatorController : MonoBehaviour
         
         Vector3 position = transform.position;
 
-        if (initial_position> endPos)
+        if (initialPosition > endPos)
         {
             if (position.y <= endPos)
             {
-                elevator_active = false;
+                elevatorActive = false;
             }
 
             else
@@ -61,7 +61,7 @@ public class ElevatorController : MonoBehaviour
         {
             if (position.y >= endPos)
             {
-                elevator_active = false;
+                elevatorActive = false;
             }
 
             else

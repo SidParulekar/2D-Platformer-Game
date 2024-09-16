@@ -7,21 +7,21 @@ using UnityEngine.Tilemaps;
 
 public class PlayerController : MonoBehaviour
 {
-    public Animator animator;
-    public BoxCollider2D boxCol;
+    [SerializeField] private Animator animator;
+    [SerializeField] private BoxCollider2D boxCol;
 
-    public ScoreController scoreController;
+    [SerializeField] private ScoreController scoreController;
 
-    public LivesController livesController;
+    [SerializeField] private LivesController livesController;
 
-    private MovingPlatform moving_platform_controller;
+    private MovingPlatform movingPlatformController;
 
-    public GameObject gameOverUI;
+    [SerializeField] private GameObject gameOverUI;
 
-    public float speed;
-    public float jump;
+    [SerializeField] private float speed;
+    [SerializeField] private float jump;
 
-    private bool on_moving_platform;
+    private bool onMovingPlatform;
 
     private Rigidbody2D rb2d;
 
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Jump");
 
-        if (on_moving_platform)
+        if (onMovingPlatform)
         {
             MoveCharacterPlatform();
         }
@@ -72,8 +72,8 @@ public class PlayerController : MonoBehaviour
 
         else if(collision.gameObject.GetComponent<MovingPlatform>())
         {
-            moving_platform_controller = collision.gameObject.GetComponent<MovingPlatform>(); 
-            on_moving_platform = true;
+            movingPlatformController = collision.gameObject.GetComponent<MovingPlatform>();
+            onMovingPlatform = true;
         }
 
         else if(collision.gameObject.GetComponent<GameEndController>())
@@ -96,9 +96,9 @@ public class PlayerController : MonoBehaviour
         position.x = position.x + 0.5f * Time.deltaTime;
         transform.position = position;
 
-        if(position.x >= moving_platform_controller.getEndPos())
+        if(position.x >= movingPlatformController.GetEndPos())
         {
-            on_moving_platform = false;
+            onMovingPlatform = false;
         }
     }
 
