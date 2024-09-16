@@ -4,24 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : PatrollingEntity
 {
 
     public Animator animator;
 
-    private float speed = 0.5f;
-    private float horizontal = 1f;
-
-    [SerializeField] private float startPos;
-    [SerializeField] private float endPos;
-
     private void Update()
     {
-        MoveEnemy();
-        PlayMovementAnimation();
+        MoveHorizontal();
+        SwitchDirection();
     }
 
-    private void PlayMovementAnimation()
+    private void SwitchDirection()
     {
         Vector3 scale = transform.localScale;
         if (horizontal < 0)
@@ -35,23 +29,6 @@ public class EnemyController : MonoBehaviour
         }
 
         transform.localScale = scale;
-    }
-
-    private void MoveEnemy()
-    {
-        Vector3 position = transform.position;
-        if (position.x <= startPos)
-        {
-            horizontal = 1f;
-        }
-
-        else if (position.x >= endPos)
-        {
-            horizontal = -1f;
-        }
-
-        position.x = position.x + horizontal * speed * Time.deltaTime;
-        transform.position = position;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

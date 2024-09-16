@@ -6,13 +6,13 @@ using System;
 
 public class ScoreController : MonoBehaviour
 {
-   private TextMeshProUGUI score_text;
+   private TextMeshProUGUI scoreText;
 
    private int score = 0;
 
     private void Awake()
     {
-        score_text = GetComponent<TextMeshProUGUI>();    
+        scoreText = GetComponent<TextMeshProUGUI>();    
     }
 
     public void IncreaseScore(int increment)
@@ -23,6 +23,6 @@ public class ScoreController : MonoBehaviour
 
     private void RefreshUI()
     {
-        score_text.text = "Score: " + score;
+        scoreText.text = "Score: " + score;
     }
 }

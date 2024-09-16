@@ -597,6 +597,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3083869970106651477, guid: a2b2b41330de15747b90689e92685964,
         type: 3}
+      propertyPath: speed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083869970106651477, guid: a2b2b41330de15747b90689e92685964,
+        type: 3}
       propertyPath: endPos
       value: 16.15
       objectReference: {fileID: 0}
@@ -614,6 +619,11 @@ PrefabInstance:
         type: 3}
       propertyPath: start_pos
       value: 12.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083869970106651477, guid: a2b2b41330de15747b90689e92685964,
+        type: 3}
+      propertyPath: horizontal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8763633752907773975, guid: a2b2b41330de15747b90689e92685964,
         type: 3}
@@ -1501,6 +1511,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3083869970106651477, guid: a2b2b41330de15747b90689e92685964,
         type: 3}
+      propertyPath: speed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083869970106651477, guid: a2b2b41330de15747b90689e92685964,
+        type: 3}
       propertyPath: endPos
       value: 19.36
       objectReference: {fileID: 0}
@@ -1518,6 +1533,11 @@ PrefabInstance:
         type: 3}
       propertyPath: start_pos
       value: 17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083869970106651477, guid: a2b2b41330de15747b90689e92685964,
+        type: 3}
+      propertyPath: horizontal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8763633752907773975, guid: a2b2b41330de15747b90689e92685964,
         type: 3}
@@ -2385,6 +2405,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3083869970106651477, guid: a2b2b41330de15747b90689e92685964,
         type: 3}
+      propertyPath: speed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083869970106651477, guid: a2b2b41330de15747b90689e92685964,
+        type: 3}
       propertyPath: endPos
       value: 7.43
       objectReference: {fileID: 0}
@@ -2392,6 +2417,11 @@ PrefabInstance:
         type: 3}
       propertyPath: startPos
       value: 3.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083869970106651477, guid: a2b2b41330de15747b90689e92685964,
+        type: 3}
+      propertyPath: horizontal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8763633752907773975, guid: a2b2b41330de15747b90689e92685964,
         type: 3}
