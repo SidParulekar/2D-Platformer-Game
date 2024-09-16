@@ -78,24 +78,3 @@ public class SoundManager : MonoBehaviour
         return null;
     }
 }
-
-/*[Serializable]
-public class SoundType
-{
-    public Sounds soundType;
-    public AudioClip soundClip;
-}
-
-public enum Sounds
-{
-    ButtonClick,
-    PlayerMove,
-    PlayerDeath,
-    PlayerTeleport,
-    EnemyDeath,
-    Music, 
-    Pickup,
-    Teleporter,
-    GameOver,
-    EnemyAttack
-}*/
